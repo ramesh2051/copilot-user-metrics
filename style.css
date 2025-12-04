@@ -493,6 +493,13 @@ table.usage-table thead {
     box-shadow: 0 2px 8px rgba(99, 102, 241, 0.2);
     z-index: 2; 
 }
+
+/* Light theme table header */
+.body.light table.usage-table thead {
+    background: linear-gradient(135deg, #e0e7ff 0%, #f3f4f6 100%);
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.08);
+    color: #373a3c;
+}
 table.usage-table th, table.usage-table td { 
     padding: .65rem .75rem; 
     text-align: right; 
