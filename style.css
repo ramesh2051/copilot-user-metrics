@@ -137,9 +137,11 @@ main { padding: 1.5rem clamp(1rem, 3vw, 2.5rem) 3rem; max-width: 1900px; margin-
     opacity: 1;
 }
 
-.panel:hover {
+@media (prefers-reduced-motion: no-preference) {
+  .panel:hover {
     transform: translateY(-2px);
     box-shadow: 0 24px 32px -8px rgb(0 0 0 / 50%), 0 12px 16px -6px rgb(0 0 0 / 30%);
+  }
 }
 
 .panel-title { 
