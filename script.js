@@ -24,35 +24,44 @@ function setupHighchartsTheme() {
     Highcharts.setOptions({
         chart: {
             backgroundColor: 'transparent',
-            style: { fontFamily: 'system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif' }
+            style: { fontFamily: "'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, sans-serif" }
         },
-        colors: ['#2563eb', '#059669', '#7c3aed', '#dc2626', '#f59e0b', '#0d9488', '#9333ea', '#ea580c', '#1d4ed8', '#16a34a'],
-        title: { style: { color: '#1f2328', fontWeight: '600'} },
-        subtitle: { style: { color: '#57606a' } },
+        colors: ['#6366f1', '#8b5cf6', '#ec4899', '#14b8a6', '#f59e0b', '#06b6d4', '#a855f7', '#ef4444', '#10b981', '#f97316'],
+        title: { style: { color: '#e8eaf0', fontWeight: '700', fontSize: '16px'} },
+        subtitle: { style: { color: '#9ba3b4', fontSize: '13px' } },
         xAxis: {
-            lineColor: '#d0d7de',
-            tickColor: '#d0d7de',
-            gridLineColor: '#e5e9ef',
-            labels: { style: { color: '#57606a', fontSize: '11px' } },
-            title: { style: { color: '#57606a' } }
+            lineColor: '#2a2f4a',
+            tickColor: '#2a2f4a',
+            gridLineColor: '#1a1f3a',
+            labels: { style: { color: '#9ba3b4', fontSize: '11px' } },
+            title: { style: { color: '#9ba3b4', fontWeight: '600' } }
         },
         yAxis: {
-            lineColor: '#d0d7de',
-            tickColor: '#d0d7de',
-            gridLineColor: '#e5e9ef',
-            labels: { style: { color: '#57606a', fontSize: '11px' } },
-            title: { style: { color: '#57606a' } }
+            lineColor: '#2a2f4a',
+            tickColor: '#2a2f4a',
+            gridLineColor: '#1a1f3a',
+            labels: { style: { color: '#9ba3b4', fontSize: '11px' } },
+            title: { style: { color: '#9ba3b4', fontWeight: '600' } }
         },
         legend: {
             backgroundColor: 'transparent',
-            itemStyle: { color: '#1f2328', fontSize: '11px' },
-            itemHoverStyle: { color: '#2563eb' }
+            itemStyle: { color: '#e8eaf0', fontSize: '12px', fontWeight: '500' },
+            itemHoverStyle: { color: '#6366f1' }
         },
         tooltip: {
-            backgroundColor: '#ffffff',
-            borderColor: '#d0d7de',
-            style: { color: '#1f2328' },
+            backgroundColor: 'rgba(26, 31, 58, 0.95)',
+            borderColor: '#6366f1',
+            borderWidth: 1,
+            borderRadius: 8,
+            style: { color: '#e8eaf0' },
             valueDecimals: 0,
+            shadow: {
+                color: 'rgba(99, 102, 241, 0.3)',
+                offsetX: 0,
+                offsetY: 4,
+                opacity: 0.5,
+                width: 8
+            },
             // Show the specific section (category / slice / point) name instead of the chart title
             formatter: function() {
                 const point = this.point || {};
@@ -63,13 +72,23 @@ function setupHighchartsTheme() {
                 if (!label && this.series) label = this.series.name;
                 // Escape if Highcharts provides helper
                 if (Highcharts.escapeHTML) label = Highcharts.escapeHTML(label);
-                return `<span style="font-weight:600">${label}</span><br/>${Highcharts.numberFormat(val, 0, '.', ',')}`;
+                return `<span style="font-weight:700">${label}</span><br/>${Highcharts.numberFormat(val, 0, '.', ',')}`;
             }
         },
         plotOptions: {
-            column: { borderRadius: 2, borderWidth: 0 },
-            bar: { borderRadius: 2, borderWidth: 0 },
-            pie: { dataLabels: { style: { fontSize: '11px', color: '#1f2328' } } }
+            column: { borderRadius: 4, borderWidth: 0 },
+            bar: { borderRadius: 4, borderWidth: 0 },
+            pie: { 
+                dataLabels: { 
+                    style: { fontSize: '11px', color: '#e8eaf0', fontWeight: '600', textOutline: '2px rgba(10, 14, 39, 0.8)' } 
+                } 
+            },
+            series: {
+                animation: {
+                    duration: 1000,
+                    easing: 'easeOutQuart'
+                }
+            }
         },
         credits: { enabled: false }
     });
