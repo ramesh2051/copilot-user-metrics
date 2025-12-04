@@ -49,11 +49,11 @@ function setupHighchartsTheme() {
             itemHoverStyle: { color: '#6366f1' }
         },
         tooltip: {
-            backgroundColor: 'rgba(26, 31, 58, 0.95)',
+            backgroundColor: getComputedStyle(document.documentElement).getPropertyValue('--tooltip-bg').trim() || 'rgba(26, 31, 58, 0.95)',
             borderColor: '#6366f1',
             borderWidth: 1,
             borderRadius: 8,
-            style: { color: '#e8eaf0' },
+            style: { color: getComputedStyle(document.documentElement).getPropertyValue('--tooltip-text').trim() || '#e8eaf0' },
             valueDecimals: 0,
             shadow: {
                 color: 'rgba(99, 102, 241, 0.3)',
